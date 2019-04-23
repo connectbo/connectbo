@@ -1,2 +1,0 @@
-# connectbo
-Personal Website
