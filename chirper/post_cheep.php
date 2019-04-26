@@ -4,7 +4,7 @@
 	require "/fs1/home/bo7/dbconnect.php";
 	if(!isset($_SESSION['userid'])){
 		echo "You are not logged in.";
-		echo '<a href ="login.php">Please redirect to this link to login in</a></br>';
+		echo '<a href ="index.php">Please redirect to this link to login in</a></br>';
 	}
 	else{
 		if(isset($_POST['text'])){

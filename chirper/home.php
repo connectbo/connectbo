@@ -60,7 +60,7 @@
 	if(!isset($_SESSION['firstname'])){
 		#User is not logged in.
 		echo "You are not logged in.";
-		echo '<a href ="login.php">Please redirect to this link to login in</a></br>';
+		echo '<a href ="index.php">Please redirect to this link to login in</a></br>';
 	}
 	else{
 		if(!isset($_SESSION['following'])){
@@ -124,7 +124,7 @@
                     </button>
                 </div>
             </div>
-            <a class="nav-link" href="login.php">Logout</a>
+            <a class="nav-link" href="index.php">Logout</a>
         </form>
     </nav>
 
