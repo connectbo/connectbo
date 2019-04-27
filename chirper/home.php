@@ -56,7 +56,7 @@
 <body>
 <?php
 	session_start();
-	require "/fs1/home/bo7/dbconnect.php";
+	require "../dbconnectbo.php";
 	if(!isset($_SESSION['firstname'])){
 		#User is not logged in.
 		echo "You are not logged in.";
