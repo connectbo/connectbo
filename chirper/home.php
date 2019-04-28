@@ -1,5 +1,6 @@
 <html>
 <head>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
@@ -10,26 +11,27 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 <script type="text/javascript">
-	$(document).ready(function(){
-		$("#share-btn").click(function(){
-			post_text = $("#message").val();
-			$.post("post_cheep.php",
-				{
-				  text: post_text
-				},
-				function(data,stauts){
-					$("#message").val("");
-					alert(data);
-				}
-			).fail(function(){
-      		console.log("error");
-			});
-		});
-	});
+    $(document).ready(function(){
+        $("#share-btn").click(function(){
+            post_text = $("#message").val();
+            $.post("post_cheep.php",
+                {
+                  text: post_text
+                },
+                function(data,stauts){
+                    $("#message").val("");
+                    alert(data);
+                }
+            ).fail(function(){
+            console.log("error");
+            });
+        });
+    });
 </script>
 <style>
-	body {
+    body {
             background-color: #eeeeee;
+            font-family: 'Ubuntu', sans-serif;
         }
 
         .h7 {
@@ -39,6 +41,17 @@
         .gedf-wrapper {
             margin-top: 0.97rem;
         }
+        .navbar-custom {
+    color: #FFFFFF;
+    background-color: #4B9CD3;}
+        .white{
+            color:#FFFFFF;
+        }
+        .buttonwhite{
+            color:#4B9CD3;
+            background-color:white;
+        }
+}
 
         /*@media (min-width: 992px) {
             .gedf-main {
@@ -55,82 +68,83 @@
 </head>
 <body>
 <?php
-	session_start();
-	require "../dbconnectbo.php";
-	if(!isset($_SESSION['firstname'])){
-		#User is not logged in.
-		echo "You are not logged in.";
-		echo '<a href ="index.php">Please redirect to this link to login in</a></br>';
-	}
-	else{
-		if(!isset($_SESSION['following'])){
-			$query1 = "select COUNT(follows_id) from follows where user_id = '".$_SESSION['userid']."'";
-			if ($result = mysqli_query($db,$query1)) {
-				while ($row = mysqli_fetch_row($result)) {
-					$_SESSION['following'] = $row[0];
-					}
-				}
-			}
-		if(!isset($_SESSION['followed'])){
-			$query2 = "select COUNT(follows_id) from follows where follows_id = '".$_SESSION['userid']."'";
-			if ($result = mysqli_query($db,$query2)) {
-				while ($row = mysqli_fetch_row($result)) {
-					$_SESSION['followed'] = $row[0];}
-				}
-			}
-		if(isset($_GET['search_text'])){
-			$match_text=mysqli_real_escape_string($db,$_GET['search_text']);
-			$_SESSION['query'] = "select users.firstname, users.lastname, users.username, cheeps.cheep_text, cheeps.created_date from users, cheeps where cheeps.user_id =users.user_id AND MATCH(cheeps.cheep_text) AGAINST ('$match_text') order by cheeps.created_date DESC limit 10";
-			}
-		else{
-				$_SESSION['query'] = "select users.firstname, users.lastname, users.username, cheeps.cheep_text, cheeps.created_date from users, follows, cheeps where follows.user_id='".$_SESSION['userid']."' AND cheeps.user_id =follows.follows_id AND users.user_id = cheeps.user_id order by cheeps.created_date DESC limit 0,10";
-			}
-		if(isset($_SESSION['query'])){
-			$_SESSION['cheep_first']=array();
-			$_SESSION['cheep_last']=array();
-			$_SESSION['cheep_user']=array();
-			$_SESSION['cheep_text']=array();
-			$_SESSION['cheep_date']=array(); 
-			if ($result = mysqli_query($db,$_SESSION['query'])) {
-				while ($row = mysqli_fetch_assoc($result)) {
-					preg_match_all('/#\w+/',$row["cheep_text"],$match_hashtags);	
-					foreach($match_hashtags[0] as $a){
-						preg_match('/\w+/',$a,$b);
-						$row["cheep_text"] = preg_replace("/(".$a.")/", "<a href='home.php?match_text=".$b[0]."&match_type=all'>".$a."</a>", $row["cheep_text"]);
-						}
-					array_push($_SESSION['cheep_first'], $row["firstname"]);
-					array_push($_SESSION['cheep_last'], $row["lastname"]);
-					array_push($_SESSION['cheep_user'], $row["username"]);
-					array_push($_SESSION['cheep_text'], $row["cheep_text"]);
-					array_push($_SESSION['cheep_date'], $row["created_date"]);
-				}
-			}
-			mysqli_close($db);
-		}
-		#Sanitize each input with htmlentities and striip
-		function sanitize_input($s){
-			$sanitized_data = htmlentities(strip_tags(trim($s)));
-			return $sanitized_data;
-			}
+    session_start();
+    require "/fs1/home/bo7/dbconnect.php";
+    if(!isset($_SESSION['firstname'])){
+        $_SESSION['firstname'] = "frodo";
+        $_SESSION['usertype'] = "standard";
+        $_SESSION['userid'] = "4";
+        $_SESSION['lastname'] = "baggins";
+        $_SESSION['username'] = "frodo";
+    }
+        if(!isset($_SESSION['following'])){
+            $query1 = "select COUNT(follows_id) from follows where user_id = '".$_SESSION['userid']."'";
+            if ($result = mysqli_query($db,$query1)) {
+                while ($row = mysqli_fetch_row($result)) {
+                    $_SESSION['following'] = $row[0];
+                    }
+                }
+            }
+        if(!isset($_SESSION['followed'])){
+            $query2 = "select COUNT(follows_id) from follows where follows_id = '".$_SESSION['userid']."'";
+            if ($result = mysqli_query($db,$query2)) {
+                while ($row = mysqli_fetch_row($result)) {
+                    $_SESSION['followed'] = $row[0];}
+                }
+            }
+        if(isset($_GET['search_text'])){
+            $match_text=mysqli_real_escape_string($db,$_GET['search_text']);
+            $_SESSION['query'] = "select users.firstname, users.lastname, users.username, cheeps.cheep_text, cheeps.created_date from users, cheeps where cheeps.user_id =users.user_id AND MATCH(cheeps.cheep_text) AGAINST ('$match_text') order by cheeps.created_date DESC limit 10";
+            }
+        else{
+                $_SESSION['query'] = "select users.firstname, users.lastname, users.username, cheeps.cheep_text, cheeps.created_date from users, follows, cheeps where follows.user_id='".$_SESSION['userid']."' AND cheeps.user_id =follows.follows_id AND users.user_id = cheeps.user_id order by cheeps.created_date DESC limit 0,10";
+            }
+        if(isset($_SESSION['query'])){
+            $_SESSION['cheep_first']=array();
+            $_SESSION['cheep_last']=array();
+            $_SESSION['cheep_user']=array();
+            $_SESSION['cheep_text']=array();
+            $_SESSION['cheep_date']=array(); 
+            if ($result = mysqli_query($db,$_SESSION['query'])) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    preg_match_all('/#\w+/',$row["cheep_text"],$match_hashtags);    
+                    foreach($match_hashtags[0] as $a){
+                        preg_match('/\w+/',$a,$b);
+                        $row["cheep_text"] = preg_replace("/(".$a.")/", "<a href='home.php?match_text=".$b[0]."&match_type=all'>".$a."</a>", $row["cheep_text"]);
+                        }
+                    array_push($_SESSION['cheep_first'], $row["firstname"]);
+                    array_push($_SESSION['cheep_last'], $row["lastname"]);
+                    array_push($_SESSION['cheep_user'], $row["username"]);
+                    array_push($_SESSION['cheep_text'], $row["cheep_text"]);
+                    array_push($_SESSION['cheep_date'], $row["created_date"]);
+                }
+            }
+            mysqli_close($db);
+        }
+        #Sanitize each input with htmlentities and striip
+        function sanitize_input($s){
+            $sanitized_data = htmlentities(strip_tags(trim($s)));
+            return $sanitized_data;
+            }
 ?>
-	<nav class="navbar navbar-light bg-white">
+    <nav class="navbar navbar-light navbar-custom">
         <a href="home.php" class="navbar-brand">Chirper@UNC</a>
         <form class="form-inline" method="GET" action="home.php">
             <div style="padding-top: 4px" class="input-group">
                 <input type="text" name="search_text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-primary" type="submit" id="button-addon2">
+                    <button class="btn btn-outline-primary buttonwhite" type="submit" id="button-addon2">
                         <i class="fa fa-search"></i>
                     </button>
                 </div>
             </div>
-            <a class="nav-link" href="index.php">Logout</a>
+            <a class="nav-link white" href="login.php">Logout</a>
         </form>
     </nav>
 
-	<br/>
-	<div class="container-fluid gedf-wrapper">
-		 <div class="row">
+    <br/>
+    <div class="container-fluid gedf-wrapper">
+         <div class="row">
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
@@ -150,7 +164,7 @@
                 </div>
             </div>
             <div class="col-md-6 gedf-main">
-            	<div class="card gedf-card">
+                <div class="card gedf-card">
                     <div class="card-header">
                         <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
@@ -176,10 +190,10 @@
                      </div>
                  </div>
                 <?php
-                	if(isset($_SESSION['cheep_text'])){
-		 				for($i=0;$i<count($_SESSION['cheep_user']);$i++){
-		 				$date = date_create($row['created_date']);
-		 				echo '<br/>
+                    if(isset($_SESSION['cheep_text'])){
+                        for($i=0;$i<count($_SESSION['cheep_user']);$i++){
+                        $date = date_create($row['created_date']);
+                        echo '<br/>
                  <div class="card gedf-card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
@@ -195,14 +209,14 @@
                             </div>
                         </div>
                     </div>
-               		 <div class="card-body">
+                     <div class="card-body">
                         <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>'.sanitize_input(date_format($date,'M d G:i A'));
                         echo '</div><p class="card-text">'.$_SESSION['cheep_text'][$i]."</p></div>
                 </div>";
-		 				}
-		 			}
-		 		?>
-               	<br/>
+                        }
+                    }
+                ?>
+                <br/>
                  <div class="card gedf-card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
@@ -217,7 +231,7 @@
                             </div>
                         </div>
                     </div>
-               		 <div class="card-body">
+                     <div class="card-body">
                         <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>
                         <a class="card-link" href="#">
                             <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur adip.</h5>
@@ -250,8 +264,5 @@ in Information and Library Science by U.S. News & World Report</a><br />
                     </div>
                 </div>
             </div>
-     <?php
- 	}
- ?>
 </body>
 </html>

@@ -1,15 +1,15 @@
 <html>
 <head>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link href="../css/login-style.css" rel="stylesheet"/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<link href="login-style.css" rel="stylesheet"/>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 </head>
 <body>
 <?php
     session_start();
-    require "../dbconnectbo.php";
+    require "/fs1/home/bo7/dbconnect.php";
     if(isset($_SESSION['userid'])){
       $_SESSION = array();
       setcookie(session_name(), '', time()-42000, '/');
@@ -30,13 +30,9 @@
     $_SESSION['userid'] = $row[2];
     $_SESSION['lastname'] = $row[3];
     $_SESSION['username'] = $row[4];
-    header('Location: home.php');
       }
     }
-    else{
-      header('Location: index.php');
-      alert('Wrong Username or Password!');
-    }
+      header('Location: home.php');
   }
 }
 
@@ -59,10 +55,9 @@
 
 
                     <div class="form-check">
-                        <button type="submit" class="btn btn-login float-left">Guest Login</button>
-                        <button href="submit" class="btn btn-login float-right">Submit</button>
+                        <button href="home.php" class="btn btn-login float-left">Guest Login</button>
+                        <button type="submit" class="btn btn-login float-right">Submit</button>
                     </div>
-                    <br />
                 </form>
                 <div class="copy-text">Created with <i class="fa fa-heart"></i> by Bo Zhou</div>
             </div>
