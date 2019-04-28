@@ -9,7 +9,7 @@
 <body>
 <?php
     session_start();
-    require "/fs1/home/bo7/dbconnect.php";
+    require "../dbconnectbo.php";
     if(isset($_SESSION['userid'])){
       $_SESSION = array();
       setcookie(session_name(), '', time()-42000, '/');
