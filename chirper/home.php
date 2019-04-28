@@ -69,7 +69,7 @@
 <body>
 <?php
     session_start();
-    require "/fs1/home/bo7/dbconnect.php";
+    require "../dbconnectbo.php";
     if(!isset($_SESSION['firstname'])){
         $_SESSION['firstname'] = "frodo";
         $_SESSION['usertype'] = "standard";
