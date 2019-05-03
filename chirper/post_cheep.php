@@ -1,7 +1,7 @@
 <?php
 	date_default_timezone_set("EST"); 
 	session_start();
-	require "/fs1/home/bo7/dbconnect.php";
+	require "../dbconnectbo.php";
 	if(!isset($_SESSION['userid'])){
 		echo "You are not logged in.";
 		echo '<a href ="index.php">Please redirect to this link to login in</a></br>';
