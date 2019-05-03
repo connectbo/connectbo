@@ -35,7 +35,6 @@
       header('Location: home.php');
   }
 }
-
 ?>
 <section class="login-block">
     <div class="container">

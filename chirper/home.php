@@ -33,11 +33,9 @@
             background-color: #eeeeee;
             font-family: 'Ubuntu', sans-serif;
         }
-
         .h7 {
             font-size: 0.8rem;
         }
-
         .gedf-wrapper {
             margin-top: 0.97rem;
         }
@@ -52,7 +50,6 @@
             background-color:white;
         }
 }
-
         /*@media (min-width: 992px) {
             .gedf-main {
                 padding-left: 4rem;
@@ -62,7 +59,6 @@
                 margin-bottom: 2.77rem;
             }
         }*/
-
         /**Reset Bootstrap*/
 </style>
 </head>
@@ -138,7 +134,7 @@
                     </button>
                 </div>
             </div>
-            <a class="nav-link white" href="login.php">Logout</a>
+            <a class="nav-link white" href="index.php">Logout</a>
         </form>
     </nav>
 
