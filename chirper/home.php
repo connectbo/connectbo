@@ -97,7 +97,7 @@
             $_SESSION['query'] = "select users.firstname, users.lastname, users.username, cheeps.cheep_text, cheeps.created_date from users, cheeps where cheeps.user_id =users.user_id AND MATCH(cheeps.cheep_text) AGAINST ('$match_text') order by cheeps.created_date DESC limit 10";
             }
         else{
-                $_SESSION['query'] = "select users.firstname, users.lastname, users.username, cheeps.cheep_text, cheeps.created_date from users, follows, cheeps where follows.user_id='".$_SESSION['userid']."' AND (cheeps.user_id =follows.follows_id OR cheeps.user_id ='".$_SESSION['userid']."')AND users.user_id = cheeps.user_id order by cheeps.created_date DESC limit 0,10";
+                $_SESSION['query'] = "select distinct users.firstname, users.lastname, users.username, cheeps.cheep_text, cheeps.created_date from users, follows, cheeps where follows.user_id='".$_SESSION['userid']."' AND (cheeps.user_id =follows.follows_id OR cheeps.user_id ='".$_SESSION['userid']."')AND users.user_id = cheeps.user_id order by cheeps.created_date DESC limit 0,10";
             }
         if(isset($_SESSION['query'])){
             $_SESSION['cheep_first']=array();
