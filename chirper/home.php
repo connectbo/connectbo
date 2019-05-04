@@ -13,7 +13,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $("#share-btn").click(function(){
-            user_id = $_SESSION['userid'];
+            user_id = <?php $_SESSION['userid']?>;
             post_text = $("#message").val();
             $.post("post_cheep.php",
                 {
