@@ -16,7 +16,8 @@
             post_text = $("#message").val();
             $.post("post_cheep.php",
                 {
-                  text: post_text
+                  text: post_text,
+                  userid: $_SESSION['userid']
                 },
                 function(data,stauts){
                     $("#message").val("");
