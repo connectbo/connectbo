@@ -13,7 +13,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $("#share-btn").click(function(){
-            user_id = document.getElementById("divhiddenid");
+            user_id = $("#divhiddenid").text();
             post_text = $("#message").val();
             $.post("post_cheep.php",
                 {
