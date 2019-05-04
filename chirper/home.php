@@ -13,11 +13,12 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $("#share-btn").click(function(){
+            user_id = $_SESSION['userid'];
             post_text = $("#message").val();
             $.post("post_cheep.php",
                 {
                   text: post_text,
-                  userid: $_SESSION['userid']
+                  userid: user_id
                 },
                 function(data,stauts){
                     $("#message").val("");
