@@ -34,6 +34,7 @@ a:hover {
   transition: all 0.5s ease-in-out;
 }
 
+
 .p-r {
   position: relative;
 }
@@ -769,6 +770,8 @@ a:hover {
 ======================================*/
 
 .work-box {
+  width:320px;
+  height:155px;
   margin-bottom: 3rem;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -781,16 +784,20 @@ a:hover {
 }
 
 .work-img {
+  height:100%; 
+  width:100%;
   display: block;
   overflow: hidden;
 }
 
 .work-img img {
-  transition: all 1s;
+  transition: all 500ms;
 }
 
 .work-content {
-  padding: 2rem 3% 1rem 4%;
+  text-align: auto;
+  font-family: 'Nanum Gothic', sans-serif;
+  padding: 1rem 1% 1rem 4%;
 }
 
 .work-content .w-more {
@@ -817,6 +824,7 @@ a:hover {
 }
 
 .w-title {
+  text-align: center;
   font-size: 1.2rem;
 }
 
