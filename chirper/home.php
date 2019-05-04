@@ -13,7 +13,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $("#share-btn").click(function(){
-            user_id = <?php echo $_SESSION['userid'];?>;
+            user_id = $("#divhiddenid").val();
             post_text = $("#message").val();
             $.post("post_cheep.php",
                 {
@@ -158,6 +158,7 @@
                         </li>
                         <li class="list-group-item">
                             <div class="h6 text-muted">Following</div>
+                            <div id="divhiddenid" style="display: none;"><?php echo $_SESSION['userid'];?></div>
                             <div class="h5"><?php echo $_SESSION['following'];?></div>
                         </li>
                     </ul>
