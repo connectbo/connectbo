@@ -283,7 +283,7 @@
                     </h5>
                   </div>
                   <div>
-                      <form action="rsvp.php" onsubmit="alert('Thanks for your message, Bo would be contacting you soon!')" method="post" role="form" class="contactForm">
+                      <form name="contact-form"action="rsvp.php" onsubmit="alert('Thanks for your message, Bo would be contacting you soon!')" method="post" role="form" class="contactForm">
                       <div class="row">
                         <div class="col-md-12 mb-3">
                           <div class="form-group">
@@ -308,7 +308,7 @@
                           </div>
                         </div>
                         <div class="col-md-12">
-                          <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
+                          <button type="submit" class="button button-a button-big button-rouded" onclick="submitForm()">Send Message</button>
                         </div>
                       </div>
                     </form>
@@ -374,7 +374,12 @@
   <script src="lib/typed/typed.min.js"></script>
   <!-- Contact Form JavaScript File -->
   <script src="contactform/contactform.js"></script>
-
+  <script>
+            function submitForm() {
+            document.contact-form.submit();
+            document.contact-form.reset();
+            }
+  </script>
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
 
