@@ -2,7 +2,7 @@
 /**
  * Returns the list of cars.
  */
-require 'https://www.connectbo.com/dbconnectbo.php';
+require "../dbconnectbo.php";
     
 $cheeps = [];
 $sql = "SELECT cheep_id, cheep_text, created_date, user_id FROM cheeps";
