@@ -7,7 +7,7 @@ require "../dbconnectbo.php";
 $cheeps = [];
 $sql = "SELECT cheep_id, cheep_text, created_date, user_id FROM cheeps";
 
-if($result = mysqli_query($con,$sql))
+if($result = mysqli_query($db,$sql))
 {
   $cr = 0;
   while($row = mysqli_fetch_assoc($result))
