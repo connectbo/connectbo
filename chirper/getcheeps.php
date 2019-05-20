@@ -3,7 +3,6 @@
  * Returns the list of cars.
  */
 require "../dbconnectbo.php";
-
 if(isset($_GET['cheepid'])){
   $cheep_id = $_GET['cheepid'];
   $query = "delete from cheeps where cheep_id = '$cheep_id' ";
@@ -13,17 +12,16 @@ if(isset($_GET['cheepid'])){
 }
 else{
 $cheeps = [];
-$sql = "SELECT cheep_id, cheep_text, created_date, user_id FROM cheeps";
-
+$sql = "SELECT cheeps.cheep_id, users.username, cheeps.cheep_text, cheeps.created_date FROM cheeps,users where cheeps.user_id = users.user_id";
 if($result = mysqli_query($db,$sql))
 {
   $cr = 0;
   while($row = mysqli_fetch_assoc($result))
   {
-    $cheeps[$cr]['id']    = $row['cheep_id'];
-    $cheeps[$cr]['text'] = $row['cheep_text'];
-    $cheeps[$cr]['date'] = $row['created_date'];
-    $cheeps[$cr]['userid'] = $row['user_id'];
+    $cheeps[$cr]['id']    = $row['cheeps.cheep_id'];
+    $cheeps[$cr]['text'] = $row['cheeps.cheep_text'];
+    $cheeps[$cr]['date'] = $row['cheeps.created_date'];
+    $cheeps[$cr]['username'] = $row['users.username'];
     $cr++;
   }
     
