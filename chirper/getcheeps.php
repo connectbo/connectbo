@@ -18,10 +18,10 @@ if($result = mysqli_query($db,$sql))
   $cr = 0;
   while($row = mysqli_fetch_assoc($result))
   {
-    $cheeps[$cr]['id']    = $row['cheeps.cheep_id'];
-    $cheeps[$cr]['text'] = $row['cheeps.cheep_text'];
-    $cheeps[$cr]['date'] = $row['cheeps.created_date'];
-    $cheeps[$cr]['username'] = $row['users.username'];
+    $cheeps[$cr]['id']    = $row['cheep_id'];
+    $cheeps[$cr]['text'] = $row['cheep_text'];
+    $cheeps[$cr]['date'] = $row['created_date'];
+    $cheeps[$cr]['username'] = $row['username'];
     $cr++;
   }
     
