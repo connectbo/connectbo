@@ -2,7 +2,7 @@
 /**
  * Returns the list of cars.
  */
-require 'https://www.connectbo.com/dbconnectbo.php';
+require '../dbconnectbo.php';
 
 if(isset($_GET['cheepid'])){
   $cheep_id = $_GET['cheepid'];
