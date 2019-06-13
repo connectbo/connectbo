@@ -94,10 +94,10 @@
             }
         if(isset($_GET['search_text'])){
             $match_text=mysqli_real_escape_string($db,$_GET['search_text']);
-            $_SESSION['query'] = "select users.firstname, users.lastname, users.username, cheeps.cheep_text, cheeps.created_date from users, cheeps where cheeps.user_id =users.user_id AND MATCH(cheeps.cheep_text) AGAINST ('$match_text') order by cheeps.created_date DESC limit 10";
+            $_SESSION['query'] = "select users.firstname, users.lastname, users.username, cheeps.cheep_text, cheeps.created_date from users, cheeps where cheeps.user_id =users.user_id AND MATCH(cheeps.cheep_text) AGAINST ('$match_text') order by cheeps.created_date DESC";
             }
         else{
-                $_SESSION['query'] = "select distinct users.firstname, users.lastname, users.username, cheeps.cheep_text, cheeps.created_date from users, follows, cheeps where follows.user_id='".$_SESSION['userid']."' AND (cheeps.user_id =follows.follows_id OR cheeps.user_id ='".$_SESSION['userid']."')AND users.user_id = cheeps.user_id order by cheeps.created_date DESC limit 0,10";
+                $_SESSION['query'] = "select distinct users.firstname, users.lastname, users.username, cheeps.cheep_text, cheeps.created_date from users, follows, cheeps where follows.user_id='".$_SESSION['userid']."' AND (cheeps.user_id =follows.follows_id OR cheeps.user_id ='".$_SESSION['userid']."')AND users.user_id = cheeps.user_id order by cheeps.created_date DESC";
             }
         if(isset($_SESSION['query'])){
             $_SESSION['cheep_first']=array();
@@ -193,7 +193,7 @@
                 <?php
                     if(isset($_SESSION['cheep_text'])){
                         for($i=0;$i<count($_SESSION['cheep_user']);$i++){
-                        $date = date_create($row['created_date']);
+                        $date = date_create($_SESSION['created_date']);
                         echo '<br/>
                  <div class="card gedf-card">
                     <div class="card-header">
@@ -218,7 +218,7 @@
                     }
                 ?>
                 <br/>
-                 <div class="card gedf-card">
+                 <!-- <div class="card gedf-card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex justify-content-between align-items-center">
@@ -252,7 +252,7 @@
                         </div>
                   </div>
                 </div>
-                <br/>
+                <br/> -->
             </div>
                 <div class="col-md-3">
                 <div class="card gedf-card">
