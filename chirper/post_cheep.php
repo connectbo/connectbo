@@ -1,5 +1,5 @@
 <?php
-	date_default_timezone_set("EDT"); 
+	date_default_timezone_set("America/Indiana/Indianapolis"); 
 		if(isset($_POST['text'])){
 			require "../dbconnectbo.php";
 			$postbox = mysqli_real_escape_string($db,$_POST['text']);
