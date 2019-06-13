@@ -1,5 +1,5 @@
 <?php
-	date_default_timezone_set("EST"); 
+	date_default_timezone_set("EDT"); 
 		if(isset($_POST['text'])){
 			require "../dbconnectbo.php";
 			$postbox = mysqli_real_escape_string($db,$_POST['text']);
