@@ -210,7 +210,7 @@
                         </div>
                     </div>
                      <div class="card-body">
-                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>'.sanitize_input(date_format($_SESSION['created_date'],'M d G:i A'));
+                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>'.sanitize_input(date_format(date_create($_SESSION['created_date']),'M d G:i A'));
                         echo '</div><p class="card-text">'.$_SESSION['cheep_text'][$i]."</p></div>
                 </div>";
                         }
