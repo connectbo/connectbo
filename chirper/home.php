@@ -102,7 +102,7 @@
     }
     if (isset($_GET['search_text'])) {
         $match_text = mysqli_real_escape_string($db, $_GET['search_text']);
-        $_SESSION['query'] = "select users.firstname, users.lastname, users.username, cheeps.cheep_text, cheeps.created_date from users, cheeps where cheeps.user_id =users.user_id AND MATCH(cheeps.cheep_text) AGAINST ('$match_text') order by cheeps.created_date DESC";
+        $_SESSION['query'] = "select users.firstname, users.lastname, users.username, cheeps.cheep_text, cheeps.created_date from users, cheeps where cheeps.user_id =users.user_id AND MATCH(cheeps.cheep_text) AGAINST ('$match_text') order by cheeps.created_date DESC limit 20";
     } else {
         $_SESSION['query'] = "select distinct users.firstname, users.lastname, users.username, cheeps.cheep_text, cheeps.created_date from users, follows, cheeps where follows.user_id='" . $_SESSION['userid'] . "' AND (cheeps.user_id =follows.follows_id OR cheeps.user_id ='" . $_SESSION['userid'] . "')AND users.user_id = cheeps.user_id order by cheeps.created_date DESC";
     }
