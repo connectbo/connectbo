@@ -274,10 +274,10 @@
                 <div class="col-md-3">
                     <div class="card gedf-card">
                         <div class="card-body">
-                            <h5 class="card-title">Let us celebrate with Meng Li's birthday!</h5>
+                            <h5 class="card-title">Happy birthday to My Babe Meng!</h5>
                             <h6 class="card-subtitle mb-2 text-muted">世界上无敌可爱的兔子蒙蒙</h6>
                             <p class="card-text">北卡最会穿衣打扮的殿堂级性感校花^ ~^</p>
-                            <a href="https://www.linkedin.com/in/bo-zhou-a64a5b122/" class="card-link">如有需求请联系独家经纪人 Dr. Zhou 谢谢合作！</a><br />
+                            <a href="https://www.linkedin.com/in/bo-zhou-a64a5b122/" class="card-link">商业合作请联系独家经纪人 Dr. Zhou 谢谢合作！</a><br />
                         </div>
                     </div>
                 </div>
