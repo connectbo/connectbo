@@ -78,11 +78,11 @@
     session_start();
     require "../dbconnectbo.php";
     if (!isset($_SESSION['firstname'])) {
-        $_SESSION['firstname'] = "Guest";
+        $_SESSION['firstname'] = "frodo";
         $_SESSION['usertype'] = "standard";
-        $_SESSION['userid'] = "0";
-        $_SESSION['lastname'] = "Guest User";
-        $_SESSION['username'] = "Guest";
+        $_SESSION['userid'] = "4";
+        $_SESSION['lastname'] = "baggins";
+        $_SESSION['username'] = "frodo";
     }
     if (!isset($_SESSION['following'])) {
         $query1 = "select COUNT(follows_id) from follows where user_id = '" . $_SESSION['userid'] . "'";
