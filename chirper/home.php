@@ -77,7 +77,7 @@
     <?php
     session_start();
     require "../dbconnectbo.php";
-    if ($_POST['inputPassword']==sha1('cloak')) {
+    if (isset($_SESSION['firstname'])) {
         $_SESSION['firstname'] = "frodo";
         $_SESSION['usertype'] = "standard";
         $_SESSION['userid'] = "4";
