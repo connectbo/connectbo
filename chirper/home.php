@@ -187,7 +187,7 @@
                             <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                                 <div class="form-group">
                                     <label class="sr-only" for="message">post</label>
-                                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="How do you think of the Golden State Warriors this year?"></textarea>
+                                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="How's your outfit look like today?"></textarea>
                                 </div>
                             </div>
                         </div>
