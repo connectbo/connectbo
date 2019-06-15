@@ -77,9 +77,12 @@
     <?php
     session_start();
     require "../dbconnectbo.php";
-    if (!isset($_SESSION['firstname'])) {
-        alert("Please log in to use Chirper@UNC");
-    }
+    if ($_POST['inputPassword']==sha1('cloak')) {
+        $_SESSION['firstname'] = "frodo";
+        $_SESSION['usertype'] = "standard";
+        $_SESSION['userid'] = "4";
+        $_SESSION['lastname'] = "baggins";
+        $_SESSION['username'] = "frodo";
     if (!isset($_SESSION['following'])) {
         $query1 = "select COUNT(follows_id) from follows where user_id = '" . $_SESSION['userid'] . "'";
         if ($result = mysqli_query($db, $query1)) {
@@ -123,6 +126,9 @@
             }
         }
         mysqli_close($db);
+    }
+    else{
+        alert("Please login!");
     }
     #Sanitize each input with htmlentities and striip
     function sanitize_input($s)
