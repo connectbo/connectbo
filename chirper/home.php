@@ -78,11 +78,7 @@
     session_start();
     require "../dbconnectbo.php";
     if (!isset($_SESSION['firstname'])) {
-        $_SESSION['firstname'] = "frodo";
-        $_SESSION['usertype'] = "standard";
-        $_SESSION['userid'] = "4";
-        $_SESSION['lastname'] = "baggins";
-        $_SESSION['username'] = "frodo";
+        alert("Please log in to use Chirper@UNC");
     }
     if (!isset($_SESSION['following'])) {
         $query1 = "select COUNT(follows_id) from follows where user_id = '" . $_SESSION['userid'] . "'";

@@ -54,7 +54,7 @@
 
 
                     <div class="form-check">
-                        <button href="home.php" class="btn btn-login float-left">Guest Login</button>
+                        <!-- <button href="home.php" class="btn btn-login float-left">Guest Login</button> -->
                         <button type="submit" class="btn btn-login float-right">Submit</button>
                     </div>
                 </form>
