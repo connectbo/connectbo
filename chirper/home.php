@@ -187,7 +187,7 @@
                             <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                                 <div class="form-group">
                                     <label class="sr-only" for="message">post</label>
-                                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="今天不准想其他的事情哦，臭猪要开心~"></textarea>
+                                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="How do you think of the Golden State Warriors this year?"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -261,7 +261,7 @@
                 </div>
                 <br/> -->
             </div>
-            <!--<div class="col-md-3">
+            <div class="col-md-3">
                  <div class="card gedf-card">
                     <div class="card-body">
                         <h5 class="card-title">Tar Teels</h5>
@@ -269,16 +269,6 @@
                         <p class="card-text">UNC-Chapel Hill's Information Science Program is TOP-RANKED among nations.</p>
                         <a href="https://www.usnews.com/best-graduate-schools/top-library-information-science-programs/university-of-north-carolina-at-chapel-hill-199120?int=a31a09#" class="card-link">#1
                             in Information and Library Science by U.S. News & World Report</a><br />
-                    </div>
-                </div> -->
-                <div class="col-md-3">
-                    <div class="card gedf-card">
-                        <div class="card-body">
-                            <h5 class="card-title">Happy birthday to My Babe Meng!</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">世界上无敌可爱的兔子蒙蒙</h6>
-                            <p class="card-text">北卡最会穿衣打扮的殿堂级性感校花^ ~^</p>
-                            <a href="https://www.linkedin.com/in/bo-zhou-a64a5b122/" class="card-link">商业合作请联系独家经纪人 Dr. Zhou 谢谢合作！</a><br />
-                        </div>
                     </div>
                 </div>
 </body>
