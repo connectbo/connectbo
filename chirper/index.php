@@ -32,6 +32,7 @@
                     }
                 }
                 header('Location: https://www.connectbo.com/chirper/home.php');
+                exit;
             }
         }
     }
