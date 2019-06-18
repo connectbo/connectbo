@@ -78,7 +78,7 @@
     session_start();
     require "../dbconnectbo.php";
     if (!isset($_SESSION['firstname'])) {
-        if(!isset($_POST['inputUsername']||$_POST['inputPassword'])){
+        if ($_POST['inputUsername']==null||$_POST['inputPassword']==null){
             alert('Please log in to use chirper!');
         }
         else{
