@@ -78,15 +78,27 @@
     session_start();
     require "../dbconnectbo.php";
     if (!isset($_SESSION['firstname'])) {
+        if(isset($firstname)){
+            $_SESSION['firstname'] = $firstname;
+            $_SESSION['lastname'] = $lastname;
+            $_SESSION['userid'] = $userid;
+            $_SESSION['usertype'] = $usertype;
+            $_SESSION['username'] = $username;
+        }
         $login_query = "select * from users where username='" . $_POST['inputUsername'] . "'";
         if ($result = mysqli_query($db, $login_query)) {
             while ($row = mysqli_fetch_row($result)) {
                 if (sha1($_POST['inputPassword']) == $row[4]) {
                     $_SESSION['firstname'] = $row['2'];
+                    $firstname = $row['2'];
                     $_SESSION['lastname'] = $row[3];
+                    $firstname = $row['3'];
                     $_SESSION['userid'] = $row[0];
+                    $firstname = $row['0'];
                     $_SESSION['usertype'] = $row[5];
+                    $firstname = $row['5'];
                     $_SESSION['username'] = $row[1];
+                    $firstname = $row['1'];
                 }
             }
         }
