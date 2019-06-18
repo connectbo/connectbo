@@ -78,10 +78,8 @@
     session_start();
     require "../dbconnectbo.php";
     if (!isset($_SESSION['firstname'])) {
-        $_SESSION['username'] = '1';
         if ($_POST['inputUsername']==null||$_POST['inputPassword']==null){
-            alert('Please log in to use chirper!');
-            $_SESSION['username'] = '2';
+            echo "<alert>Please log in to use chirper!'</alert>";
         }
         else{
             $login_query = "select * from users where username='".$_POST['inputUsername']."'";
