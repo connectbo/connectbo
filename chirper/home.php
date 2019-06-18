@@ -83,7 +83,7 @@
         }
         else{
             $login_query = "select * from users where username='".$_POST['inputUsername']."'";
-            alert($login_query);
+            console.log($login_query);
             if ($result = mysqli_query($db, $login_query)) {
                 while ($row = mysqli_fetch_row($result)) {
                     if(sha1($_POST['inputPassword'])==$row['password']){
