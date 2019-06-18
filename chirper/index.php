@@ -31,8 +31,7 @@
                         }
                     }
                 }
-                header('Location: home.php');
-                exit;
+                header('Location: https://www.connectbo.com/chirper/home.php');
             }
         }
     }
