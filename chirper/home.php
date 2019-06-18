@@ -81,6 +81,7 @@
     if (!isset($_SESSION['firstname'])) {
         echo "<alert>no session</alert>";
         if($first){
+            echo "<alert>Second</alert>";
             $_SESSION['firstname'] = $firstname;
             $_SESSION['lastname'] = $lastname;
             $_SESSION['userid'] = $userid;
