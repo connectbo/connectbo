@@ -102,6 +102,10 @@
                     $_SESSION['username'] = $row[1];
                     $username = $row['1'];
                     $first=true;
+                    if(isset($firstname)){
+                        echo "<alert>found firstname</alert>";
+                    }
+
                 }
             }
         }
