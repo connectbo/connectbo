@@ -79,7 +79,14 @@
     require "../dbconnectbo.php";
     $first = false;
     if (!isset($_SESSION['firstname'])) {
-        echo "<alert>No session</alert>";
+        echo "<alert>".$firstname."</alert>";
+        if($first){
+            $_SESSION['firstname'] = $firstname;
+            $_SESSION['lastname'] = $lastname;
+            $_SESSION['userid'] = $userid;
+            $_SESSION['usertype'] = $usertype;
+            $_SESSION['username'] = $username;
+        }
         $login_query = "select * from users where username='" . $_POST['inputUsername'] . "'";
         if ($result = mysqli_query($db, $login_query)) {
             while ($row = mysqli_fetch_row($result)) {
@@ -98,16 +105,6 @@
                 }
             }
         }
-    }
-    else{
-        if($first==true){
-            $_SESSION['firstname'] = $firstname;
-            $_SESSION['lastname'] = $lastname;
-            $_SESSION['userid'] = $userid;
-            $_SESSION['usertype'] = $usertype;
-            $_SESSION['username'] = $username;
-        }
-    echo "<alert>session</alert>";
     }
     if (!isset($_SESSION['following'])) {
         $query1 = "select COUNT(follows_id) from follows where user_id = '" . $_SESSION['userid'] . "'";
