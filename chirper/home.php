@@ -77,8 +77,8 @@
     <?php
     session_start();
     require "../dbconnectbo.php";
+    $_SESSION['username'] = $_SESSION['usertype'];
     if (!isset($_SESSION['firstname'])) {
-            $_SESSION['username'] = 'test';
             $login_query = "select * from users where username='".$_POST['inputUsername']."'";
             if ($result = mysqli_query($db, $login_query)) {
                 while ($row = mysqli_fetch_row($result)) {
