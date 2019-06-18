@@ -85,16 +85,14 @@
         }
         else{
             $login_query = "select * from users where username='".$_POST['inputUsername']."'";
-            $_SESSION['username'] = $login_query;
             if ($result = mysqli_query($db, $login_query)) {
                 while ($row = mysqli_fetch_row($result)) {
+                    if(sha1($_POST['inputPassword'])==$row['4']){
+                    $_SESSION['firstname'] = $row['2'];
+                    $_SESSION['lastname'] = $row['3'];
+                    $_SESSION['userid'] = $row['0'];
+                    $_SESSION['usertype'] = $row['5'];
                     $_SESSION['username'] = $row['1'];
-                    if(sha1($_POST['inputPassword'])==$row['password']){
-                    $_SESSION['firstname'] = $row['firstname'];
-                    $_SESSION['lastname'] = $row['lastname'];
-                    $_SESSION['userid'] = $row['userid'];
-                    $_SESSION['usertype'] = $row['usertype'];
-                    $_SESSION['username'] = $row['username'];
                     }
                 }
             }
