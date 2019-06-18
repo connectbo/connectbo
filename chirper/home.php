@@ -100,7 +100,6 @@
             }
         }
     }
-    $_SESSION['username'] = '4';
     if (!isset($_SESSION['following'])) {
         $query1 = "select COUNT(follows_id) from follows where user_id = '" . $_SESSION['userid'] . "'";
         if ($result = mysqli_query($db, $query1)) {
