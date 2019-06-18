@@ -28,10 +28,11 @@
                             $_SESSION['userid'] = $row[0];
                             $_SESSION['usertype'] = $row[5];
                             $_SESSION['username'] = $row[1];
-                            header('Location: home.php');
+                            echo "alert('Hello! I am an alert box!!')";
                         }
                     }
                 }
+                // header('Location: home.php');
             }
         }
     }
