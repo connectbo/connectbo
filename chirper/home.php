@@ -78,10 +78,13 @@
     session_start();
     require "../dbconnectbo.php";
     if (!isset($_SESSION['firstname'])) {
+        $_SESSION['username'] = '1';
         if ($_POST['inputUsername']==null||$_POST['inputPassword']==null){
             alert('Please log in to use chirper!');
+            $_SESSION['username'] = '2';
         }
         else{
+            $_SESSION['username'] = '3';
             $login_query = "select * from users where username='".$_POST['inputUsername']."'";
             console.log($login_query);
             if ($result = mysqli_query($db, $login_query)) {
@@ -97,6 +100,7 @@
             }
         }
     }
+    $_SESSION['username'] = '4';
     if (!isset($_SESSION['following'])) {
         $query1 = "select COUNT(follows_id) from follows where user_id = '" . $_SESSION['userid'] . "'";
         if ($result = mysqli_query($db, $query1)) {
