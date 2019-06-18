@@ -79,7 +79,7 @@
     require "../dbconnectbo.php";
     $first = false;
     if (!isset($_SESSION['firstname'])) {
-        echo "<alert>$firstname</alert>";
+        echo "<alert>no session</alert>";
         if($first){
             $_SESSION['firstname'] = $firstname;
             $_SESSION['lastname'] = $lastname;
@@ -104,6 +104,15 @@
                     $first=true;
                 }
             }
+        }
+    }
+    else{
+        if($first){
+            $_SESSION['firstname'] = $firstname;
+            $_SESSION['lastname'] = $lastname;
+            $_SESSION['userid'] = $userid;
+            $_SESSION['usertype'] = $usertype;
+            $_SESSION['username'] = $username;
         }
     }
     if (!isset($_SESSION['following'])) {
