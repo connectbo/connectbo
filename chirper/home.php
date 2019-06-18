@@ -77,12 +77,13 @@
     <?php
     session_start();
     require "../dbconnectbo.php";
-    $first = false;
+    $_SESSION['enterUsername'] = $_POST['inputUsername'];
+    $_SESSION['enterPassword'] = $_POST['inputPassword'];
     if (!isset($_SESSION['firstname'])) {
-        $login_query = "select * from users where username='" . $_POST['inputUsername'] . "'";
+        $login_query = "select * from users where username='" . $_SESSION['enterUsername'] . "'";
         if ($result = mysqli_query($db, $login_query)) {
             while ($row = mysqli_fetch_row($result)) {
-                if (sha1($_POST['inputPassword']) == $row[4]) {
+                if (sha1($_SESSION['enterPassword']) == $row[4]) {
                     $_SESSION['firstname'] = $row['2'];
                     $firstname = $row['2'];
                     $_SESSION['lastname'] = $row[3];
@@ -93,16 +94,15 @@
                     $usertype = $row['5'];
                     $_SESSION['username'] = $row[1];
                     $username = $row['1'];
-                    $first = true;
                 }
             }
         }
     }
     $_SESSION['firstname'] = $firstname;
-        $_SESSION['lastname'] = $lastname;
-        $_SESSION['userid'] = $userid;
-        $_SESSION['usertype'] = $usertype;
-        $_SESSION['username'] = $username;
+    $_SESSION['lastname'] = $lastname;
+    $_SESSION['userid'] = $userid;
+    $_SESSION['usertype'] = $usertype;
+    $_SESSION['username'] = $username;
     if (!isset($_SESSION['following'])) {
         $query1 = "select COUNT(follows_id) from follows where user_id = '" . $_SESSION['userid'] . "'";
         if ($result = mysqli_query($db, $query1)) {
