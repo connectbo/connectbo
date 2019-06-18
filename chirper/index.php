@@ -29,7 +29,7 @@
                             $_SESSION['lastname'] = $row[3];
                             $_SESSION['userid'] = $row[0];
                             $_SESSION['usertype'] = $row[5];
-                            $_SESSION['username'] = $row[1];
+                            $_SESSION['username'] = 'Whatapps';
                         }
                     }
                 }
