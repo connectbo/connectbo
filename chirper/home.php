@@ -78,15 +78,14 @@
     session_start();
     require "../dbconnectbo.php";
     $first = false;
+    if($first){
+        $_SESSION['firstname'] = $firstname;
+        $_SESSION['lastname'] = $lastname;
+        $_SESSION['userid'] = $userid;
+        $_SESSION['usertype'] = $usertype;
+        $_SESSION['username'] = $username;
+    }
     if (!isset($_SESSION['firstname'])) {
-        if($first){
-            echo "<alert>Second</alert>";
-            $_SESSION['firstname'] = $firstname;
-            $_SESSION['lastname'] = $lastname;
-            $_SESSION['userid'] = $userid;
-            $_SESSION['usertype'] = $usertype;
-            $_SESSION['username'] = $username;
-        }
         $login_query = "select * from users where username='" . $_POST['inputUsername'] . "'";
         if ($result = mysqli_query($db, $login_query)) {
             while ($row = mysqli_fetch_row($result)) {
@@ -101,22 +100,9 @@
                     $usertype = $row['5'];
                     $_SESSION['username'] = $row[1];
                     $username = $row['1'];
-                    $first=true;
-                    if(isset($firstname)){
-                        echo "<alert>found firstname</alert>";
-                    }
-
+                    $first = true;
                 }
             }
-        }
-    }
-    else{
-        if($first){
-            $_SESSION['firstname'] = $firstname;
-            $_SESSION['lastname'] = $lastname;
-            $_SESSION['userid'] = $userid;
-            $_SESSION['usertype'] = $usertype;
-            $_SESSION['username'] = $username;
         }
     }
     if (!isset($_SESSION['following'])) {
