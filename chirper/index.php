@@ -16,25 +16,6 @@
         $_SESSION = array();
         setcookie(session_name(), '', time() - 42000, '/');
         session_destroy();
-    } else {
-        if (isset($_POST['inputUsername']) && isset($_POST['inputPassword'])) {
-            if (!isset($_SESSION['firstname'])) {
-                $login_query = "select * from users where username='" . $_POST['inputUsername'] . "'";
-                if ($result = mysqli_query($db, $login_query)) {
-                    while ($row = mysqli_fetch_row($result)) {
-                        if (sha1($_POST['inputPassword']) == $row[4]) {
-                            $_SESSION['firstname'] = $row[2];
-                            $_SESSION['lastname'] = $row[3];
-                            $_SESSION['userid'] = $row[0];
-                            $_SESSION['usertype'] = $row[5];
-                            $_SESSION['username'] = $row[1];
-                        }
-                    }
-                }
-                header('Location: https://www.connectbo.com/chirper/home.php');
-                exit;
-            }
-        }
     }
     ?>
     <section class="login-block">
@@ -42,7 +23,7 @@
             <div class="row">
                 <div class="col-md-4 login-sec">
                     <h2 class="text-center">Login Now</h2>
-                    <form class="login-form" method="post" action="index.php">
+                    <form class="login-form" method="post" action="home.php">
                         <div class="form-group">
                             <label for="exampleInputEmail1" class="text-uppercase">Username</label>
                             <input type="text" class="form-control" name="inputUsername" placeholder="">
