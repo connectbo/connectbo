@@ -77,7 +77,7 @@
     <?php
     session_start();
     require "../dbconnectbo.php";
-    if (!isset($_SESSION['firstname'])) {
+    if (isset($_POST['inputUsername'])) {
             $login_query = "select * from users where username='".$_POST['inputUsername']."'";
             if ($result = mysqli_query($db, $login_query)) {
                 while ($row = mysqli_fetch_row($result)) {
@@ -90,7 +90,7 @@
                     }
                 }
             }
-        }
+    }
     if (!isset($_SESSION['following'])) {
         $query1 = "select COUNT(follows_id) from follows where user_id = '" . $_SESSION['userid'] . "'";
         if ($result = mysqli_query($db, $query1)) {
