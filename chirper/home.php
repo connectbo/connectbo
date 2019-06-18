@@ -85,7 +85,7 @@
             $login_query = "select * from users where username='".$_POST['inputUsername']."'";
             if ($result = mysqli_query($db, $login_query)) {
                 while ($row = mysqli_fetch_row($result)) {
-                    if(sha1($_POST['inputPassword'])==$row[0]){
+                    if(sha1($_POST['inputPassword'])==$row['password']){
                     $_SESSION['firstname'] = $row['firstname'];
                     $_SESSION['lastname'] = $row['lastname'];
                     $_SESSION['userid'] = $row['userid'];
