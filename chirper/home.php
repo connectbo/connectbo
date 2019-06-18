@@ -79,7 +79,7 @@
     require "../dbconnectbo.php";
     $first = false;
     if (!isset($_SESSION['firstname'])) {
-        echo "<alert>".$firstname."</alert>";
+        echo "<alert>$firstname</alert>";
         if($first){
             $_SESSION['firstname'] = $firstname;
             $_SESSION['lastname'] = $lastname;
