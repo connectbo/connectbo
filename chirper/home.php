@@ -77,8 +77,9 @@
     <?php
     session_start();
     require "../dbconnectbo.php";
+    $first = false;
     if (!isset($_SESSION['firstname'])) {
-        if(isset($firstname)){
+        if($first==true){
             $_SESSION['firstname'] = $firstname;
             $_SESSION['lastname'] = $lastname;
             $_SESSION['userid'] = $userid;
@@ -92,13 +93,14 @@
                     $_SESSION['firstname'] = $row['2'];
                     $firstname = $row['2'];
                     $_SESSION['lastname'] = $row[3];
-                    $firstname = $row['3'];
+                    $lastname = $row['3'];
                     $_SESSION['userid'] = $row[0];
-                    $firstname = $row['0'];
+                    $userid = $row['0'];
                     $_SESSION['usertype'] = $row[5];
-                    $firstname = $row['5'];
+                    $usertype = $row['5'];
                     $_SESSION['username'] = $row[1];
-                    $firstname = $row['1'];
+                    $username = $row['1'];
+                    $first=true;
                 }
             }
         }
