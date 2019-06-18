@@ -28,7 +28,7 @@
                             $_SESSION['userid'] = $row[0];
                             $_SESSION['usertype'] = $row[5];
                             $_SESSION['username'] = $row[1];
-                            echo "alert('Hello! I am an alert box!!')";
+                            echo "alert(Hel".$_SESSION['username']."lo!)";
                         }
                     }
                 }
