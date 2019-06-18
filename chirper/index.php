@@ -28,10 +28,10 @@
                             $_SESSION['userid'] = $row[0];
                             $_SESSION['usertype'] = $row[5];
                             $_SESSION['username'] = $row[1];
+                            header('Location: home.php');
                         }
                     }
                 }
-                header('Location: home.php');
             }
         }
     }
