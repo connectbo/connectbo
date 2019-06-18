@@ -79,7 +79,6 @@
     require "../dbconnectbo.php";
     $first = false;
     if (!isset($_SESSION['firstname'])) {
-        echo "<alert>no session</alert>";
         if($first){
             echo "<alert>Second</alert>";
             $_SESSION['firstname'] = $firstname;
