@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-md-4 login-sec">
                     <h2 class="text-center">Login Now</h2>
-                    <form class="login-form" method="post" action="home.php">
+                    <form class="login-form" method="post" action="index.php">
                         <div class="form-group">
                             <label for="exampleInputEmail1" class="text-uppercase">Username</label>
                             <input type="text" class="form-control" name="inputUsername" placeholder="">
