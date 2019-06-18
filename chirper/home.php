@@ -77,18 +77,16 @@
     <?php
     session_start();
     require "../dbconnectbo.php";
-    if (isset($_POST['inputUsername']) && isset($_POST['inputPassword'])) {
-        if (!isset($_SESSION['firstname'])) {
-            $login_query = "select * from users where username='" . $_POST['inputUsername'] . "'";
-            if ($result = mysqli_query($db, $login_query)) {
-                while ($row = mysqli_fetch_row($result)) {
-                    if (sha1($_POST['inputPassword']) == $row[4]) {
-                        $_SESSION['firstname'] = $row['2'];
-                        $_SESSION['lastname'] = $row[3];
-                        $_SESSION['userid'] = $row[0];
-                        $_SESSION['usertype'] = $row[5];
-                        $_SESSION['username'] = $row[1];
-                    }
+    if (!isset($_SESSION['firstname'])) {
+        $login_query = "select * from users where username='" . $_POST['inputUsername'] . "'";
+        if ($result = mysqli_query($db, $login_query)) {
+            while ($row = mysqli_fetch_row($result)) {
+                if (sha1($_POST['inputPassword']) == $row[4]) {
+                    $_SESSION['firstname'] = $row['2'];
+                    $_SESSION['lastname'] = $row[3];
+                    $_SESSION['userid'] = $row[0];
+                    $_SESSION['usertype'] = $row[5];
+                    $_SESSION['username'] = $row[1];
                 }
             }
         }
@@ -271,7 +269,7 @@
                 <br/> -->
             </div>
             <div class="col-md-3">
-                 <div class="card gedf-card">
+                <div class="card gedf-card">
                     <div class="card-body">
                         <h5 class="card-title">Tar Teels</h5>
                         <h6 class="card-subtitle mb-2 text-muted">@School of Information and Library Science</h6>
