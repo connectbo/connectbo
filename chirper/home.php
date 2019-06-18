@@ -79,6 +79,7 @@
     require "../dbconnectbo.php";
     $first = false;
     if (!isset($_SESSION['firstname'])) {
+        echo "<alert>No session</alert>";
         if($first==true){
             $_SESSION['firstname'] = $firstname;
             $_SESSION['lastname'] = $lastname;
@@ -104,6 +105,9 @@
                 }
             }
         }
+    }
+    else{
+    echo "<alert>No session</alert>";
     }
     if (!isset($_SESSION['following'])) {
         $query1 = "select COUNT(follows_id) from follows where user_id = '" . $_SESSION['userid'] . "'";
