@@ -58,7 +58,6 @@
             color: #4B9CD3;
             background-color: white;
         }
-        }
 
         /*@media (min-width: 992px) {
             .gedf-main {
@@ -98,11 +97,11 @@
             }
         }
     }
-    $_SESSION['firstname'] = 'frodo';
+    //$_SESSION['firstname'] = 'frodo';
     // $firstname = $row['2'];
     $_SESSION['lastname'] = 'baggins';
     //$lastname = $row['3'];
-    $_SESSION['userid'] = '4';
+    //$_SESSION['userid'] = '4';
     //$userid = $row['0'];
     $_SESSION['usertype'] = 'standard';
     //$usertype = $row['5'];
