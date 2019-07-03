@@ -99,13 +99,13 @@
     }
     //$_SESSION['firstname'] = 'frodo';
     // $firstname = $row['2'];
-    $_SESSION['lastname'] = 'baggins';
+    //$_SESSION['lastname'] = 'baggins';
     //$lastname = $row['3'];
     //$_SESSION['userid'] = '4';
     //$userid = $row['0'];
-    $_SESSION['usertype'] = 'standard';
+    //$_SESSION['usertype'] = 'standard';
     //$usertype = $row['5'];
-    $_SESSION['username'] = 'frodo';
+    //$_SESSION['username'] = 'frodo';
     if (!isset($_SESSION['following'])) {
         $query1 = "select COUNT(follows_id) from follows where user_id = '" . $_SESSION['userid'] . "'";
         if ($result = mysqli_query($db, $query1)) {
