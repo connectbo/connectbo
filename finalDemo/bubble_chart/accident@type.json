@@ -1,0 +1,153 @@
+{
+    "name": "Accident",
+    "children": [
+        {
+            "name": "Fatality Collision",
+            "children": [
+                {
+                    "name": "Angles",
+                    "value": 11
+                },
+                {
+                    "name": "Cycles",
+                    "value": 12
+                },
+                {
+                    "name": "Pedestrian",
+                    "value": 54
+                },
+                {
+                    "name": "Parked Car",
+                    "value": 3
+                },
+                {
+                    "name": "Rear Ended",
+                    "value": 3
+                },
+                {
+                    "name": "Sideswipe",
+                    "value": 4
+                },
+                {
+                    "name": "Head On",
+                    "value": 7
+                },
+                {
+                    "name": "Other",
+                    "value": 38
+                }
+            ]
+        },
+        {
+            "name": "Injury Collision",
+            "children": [
+                {
+                    "name": "Angles",
+                    "value": 6593
+                },
+                {
+                    "name": "Cycles",
+                    "value": 2551
+                },
+                {
+                    "name": "Pedestrian",
+                    "value": 2867
+                },
+                {
+                    "name": "Parked Car",
+                    "value": 1250
+                },
+                {
+                    "name": "Rear Ended",
+                    "value": 6564
+                },
+                {
+                    "name": "Sideswipe",
+                    "value": 1201
+                },
+                {
+                    "name": "Head On",
+                    "value": 409
+                },
+                {
+                    "name": "Other",
+                    "value": 2337
+                }
+            ]
+        },
+        {
+            "name": "Property Damage Only Collision",
+            "children": [
+                {
+                    "name": "Angles",
+                    "value": 10073
+                },
+                {
+                    "name": "Cycles",
+                    "value": 352
+                },
+                {
+                    "name": "Pedestrian",
+                    "value": 366
+                },
+                {
+                    "name": "Parked Car",
+                    "value": 19207
+                },
+                {
+                    "name": "Rear Ended",
+                    "value": 9217
+                },
+                {
+                    "name": "Sideswipe",
+                    "value": 7517
+                },
+                {
+                    "name": "Head On",
+                    "value": 580
+                },
+                {
+                    "name": "Other",
+                    "value": 6867
+                }
+            ]
+        },
+        {
+            "name": "Serious Injury Collision",
+            "children": [
+                {
+                    "name": "Angles",
+                    "value": 169
+                },
+                {
+                    "name": "Cycles",
+                    "value": 188
+                },
+                {
+                    "name": "Pedestrian",
+                    "value": 412
+                },
+                {
+                    "name": "Parked Car",
+                    "value": 40
+                },
+                {
+                    "name": "Rear Ended",
+                    "value": 68
+                },
+                {
+                    "name": "Sideswipe",
+                    "value": 35
+                },
+                {
+                    "name": "Head On",
+                    "value": 40
+                },
+                {
+                    "name": "Other",
+                    "value": 204
+                }
+            ]
+        }
+    ]
+}

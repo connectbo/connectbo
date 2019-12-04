@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Bubble Chart</title>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body style="background-color: 99f3c9;">
+    <nav
+      style="background-color: 33b4a3;"
+      class="navbar navbar-expand-lg navbar-dark"
+    >
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Tackling Traffic Safety</a>
+        </div>
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/geo_traffic/traffic_map.html"
+              >GeoData Analytics</a
+            >
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/bubble_chart/">Bubble Chart</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container text-center mt-3">
+      <h1>Interactive Bubble Chart Accident Severity Analysis</h1>
+    </div>
+    <p class="col-3">
+      Potential Causes:
+      <select class="custom-select" id="filter">
+        <option value="type" selected="selected">Collision Type</option>
+        <option value="weather">Weather</option>
+        <option value="light">Light Condition</option>
+      </select>
+    </p>
+    <div id="bubble-chart"></div>
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="bubble.js"></script>
+  </body>
+</html>

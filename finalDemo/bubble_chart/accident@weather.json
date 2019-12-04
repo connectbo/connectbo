@@ -1,0 +1,117 @@
+{
+    "name": "Accident",
+    "children": [
+        {
+            "name": "Fatality Collision",
+            "children": [
+                {
+                    "name": "Clear or Partly Cloudy",
+                    "value": 91
+                },
+                {
+                    "name": "Fog/Smog/Smoke",
+                    "value": 2
+                },
+                {
+                    "name": "Other",
+                    "value": 1
+                },
+                {
+                    "name": "Overcast",
+                    "value": 24
+                },
+                {
+                    "name": "Raining",
+                    "value": 19
+                },
+                {
+                    "name": "Severe Crosswind",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "name": "Injury Collision",
+            "children": [
+                {
+                    "name": "Clear or Partly Cloudy",
+                    "value": 16848
+                },
+                {
+                    "name": "Fog/Smog/Smoke",
+                    "value": 113
+                },
+                {
+                    "name": "Other",
+                    "value": 37
+                },
+                {
+                    "name": "Overcast",
+                    "value": 4007
+                },
+                {
+                    "name": "Raining",
+                    "value": 5242
+                },
+                {
+                    "name": "Unknown",
+                    "value": 333
+                }
+            ]
+        },
+        {
+            "name": "Property Damage Only Collision",
+            "children": [
+                {
+                    "name": "Clear or Partly Cloudy",
+                    "value": 33529
+                },
+                {
+                    "name": "Fog/Smog/Smoke",
+                    "value": 217
+                },
+                {
+                    "name": "Other",
+                    "value": 208
+                },
+                {
+                    "name": "Overcast",
+                    "value": 8341
+                },
+                {
+                    "name": "Raining",
+                    "value": 10099
+                },
+                {
+                    "name": "Unknown",
+                    "value": 6493
+                }
+            ]
+        },
+        {
+            "name": "Serious Injury Collision",
+            "children": [
+                {
+                    "name": "Clear or Partly Cloudy",
+                    "value": 834
+                },
+                {
+                    "name": "Fog/Smog/Smoke",
+                    "value": 1
+                },
+                {
+                    "name": "Overcast",
+                    "value": 182
+                },
+                {
+                    "name": "Raining",
+                    "value": 234
+                },
+                {
+                    "name": "Unknown",
+                    "value": 18
+                }
+            ]
+        }
+    ]
+}
