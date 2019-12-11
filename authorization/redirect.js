@@ -1,6 +1,8 @@
 $(document).on("click", "#get-token", async function() {
   const userToken = window.location.hash;
+  console.log(userToken);
   const username = getCookie("username");
+  console.log(username);
   try {
     const result1 = await axios({
       method: "post",
