@@ -1,5 +1,5 @@
 $(document).on("click", "#get-token", async function() {
-  const userToken = window.location.hash;
+  const userToken = url.match(/\#(?:access_token)\=([\S\s]*?)\&/)[1];;
   console.log(userToken);
   const username = getCookie("username");
   console.log(username);
