@@ -9,6 +9,9 @@ $(document).on("click", "#get-token", async function() {
     const result1 = await axios({
       method: "post",
       url: "http://localhost:3000/user/save_token",
+      headers: {
+        Authorization: "Bearer " + jwt
+      },
       data: {
         "data": {
           "user": username,
