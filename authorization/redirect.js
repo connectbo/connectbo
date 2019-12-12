@@ -2,6 +2,7 @@ $(document).on("click", "#get-token", async function() {
   const url = window.location.href;
   const userToken = url.match(/\#(?:access_token)\=([\S\s]*?)\&/)[1];;
   console.log(userToken);
+  const jwt = getCookie("jwt");
   const username = getCookie("username");
   console.log(username);
   try {
@@ -18,6 +19,9 @@ $(document).on("click", "#get-token", async function() {
     const result2 = await axios({
       method: "post",
       url: "http://localhost:3000/private/store_playlist",
+      headers: {
+        Authorization: "Bearer " + jwt
+      },
       data: {
         "data": {
           "user": username,
