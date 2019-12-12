@@ -9,9 +9,9 @@ $(document).on("click", "#get-token", async function() {
       method: "post",
       url: "http://localhost:3000/user/save_token",
       data: {
-        data: {
-          user: username,
-          token: userToken
+        "data": {
+          "user": username,
+          "token": userToken
         }
       }
     });
@@ -19,9 +19,9 @@ $(document).on("click", "#get-token", async function() {
       method: "post",
       url: "http://localhost:3000/private/store_playlist",
       data: {
-        data: {
-          user: username,
-          token: userToken
+        "data": {
+          "user": username,
+          "token": userToken
         }
       }
     });
