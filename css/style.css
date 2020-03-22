@@ -770,6 +770,7 @@ a:hover {
 ======================================*/
 
 .work-box {
+  padding: 10px 10px;
   width:320px;
   height:155px;
   margin-bottom: 3rem;
