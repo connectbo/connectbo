@@ -770,10 +770,9 @@ a:hover {
 ======================================*/
 
 .work-box {
-  padding: 10px 10px;
+  margin-bottom: 6rem;
   width:320px;
   height:155px;
-  margin-bottom: 3rem;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background-color: #fff;
@@ -796,6 +795,7 @@ a:hover {
 }
 
 .work-content {
+  margin-bottom: 3rem;
   text-align: auto;
   font-family: 'Nanum Gothic', sans-serif;
   padding: 1rem 1% 1rem 4%;
