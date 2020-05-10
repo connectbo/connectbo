@@ -6,6 +6,6 @@ Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
 DirectoryIndex index.php index.html
 AddHandler application/ etc.
 AddType text/html .html
+RewriteEngine On
 RewriteCond %{SERVER_PORT} 80
-RewriteCond %{HTTP_HOST} ^(www\.)?connectbo\.com
 RewriteRule ^(.*)$ https://www.connectbo.com/$1 [R,L]
