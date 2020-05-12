@@ -9,4 +9,4 @@ AddType text/html .html
 RewriteEngine On
 RewriteCond %{HTTP_HOST} !=on
 RewriteCond %{HTTP:X-Forwarded-Proto} !https 
-RewriteRule ^(.*)$ https://www.connectbo.com%{REQUEST_URI}
+RewriteRule ^(.*)$ https://www.connectbo.com
