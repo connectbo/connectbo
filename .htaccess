@@ -7,5 +7,6 @@ DirectoryIndex index.php index.html
 AddHandler application/ etc.
 AddType text/html .html
 RewriteEngine On
-RewriteCond %{HTTP_HOST} off
+RewriteCond %{HTTP_HOST} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https 
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI}
