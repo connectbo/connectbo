@@ -7,5 +7,5 @@ DirectoryIndex index.php index.html
 AddHandler application/ etc.
 AddType text/html .html
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^connectbo.com [NC]
-RewriteRule ^(.*)$ https://www.connectbo.com/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI}
