@@ -787,7 +787,8 @@ a:hover {
 .work-img {
   height:100%; 
   width:100%;
-  display: block;
+  display: flex;
+  align-items: center;
   overflow: hidden;
 }
 
